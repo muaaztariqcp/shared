@@ -6,18 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbModule = void 0;
+exports.UserRepository = void 0;
 const common_1 = require("@nestjs/common");
-const db_service_1 = require("./db.service");
-const user_repository_1 = require("./repositories/user.repository");
-let DbModule = class DbModule {
+let UserRepository = class UserRepository {
+    async verifyUser(user) {
+        console.log('Verifying user...');
+        console.log('User: ', user);
+        return true;
+    }
 };
-exports.DbModule = DbModule;
-exports.DbModule = DbModule = __decorate([
-    (0, common_1.Module)({
-        imports: [],
-        providers: [db_service_1.DbService, user_repository_1.UserRepository],
-        exports: [db_service_1.DbService, user_repository_1.UserRepository]
-    })
-], DbModule);
-//# sourceMappingURL=db.module.js.map
+exports.UserRepository = UserRepository;
+exports.UserRepository = UserRepository = __decorate([
+    (0, common_1.Injectable)()
+], UserRepository);
+//# sourceMappingURL=user.repository.js.map
